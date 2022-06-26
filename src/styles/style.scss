@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+//Definición de variables
+
+$width-min: 435px;
+$width: 465px;
+
+//Definición de los estilos de los temas light - dark
+@mixin theme-colors($light-theme: true) {
+    @if $light-theme {
+        header {
+            background-image: url('../images/bg-desktop-light.jpg');
+
+            form {
+                background-color: white;
+                box-shadow: 0 0 11px rgb(0 0 0 / 12%);
+
+                input {
+                    &:focus {
+                        border: 1px solid hsl(233, 11%, 84%);
+                    }
+                }
+
+                button {
+                    border: 1px solid hsl(236, 33%, 92%);
+                }
+            }
+        }
+
+        section {
+            background-color: hsl(0, 0%, 98%);
+
+            div {
+                background-color: white;
+                box-shadow: 0 0 11px rgb(0 0 0 / 12%);
+
+                ul {
+                    color: inherit;
+
+                    li {
+                        border-bottom: 1px solid hsl(233, 11%, 84%);
+
+                        form {
+                            background-color: transparent;
+
+                            input {
+                                &:focus {
+                                    border: 1px solid hsl(233, 11%, 84%);
+                                }
+                            }
+
+                            button {
+                                border: 1px solid hsl(236, 33%, 92%);
+
+                                &:hover {
+                                    border-color: hsl(233, 11%, 84%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @else {
+        header {
+            background-image: url('../images/bg-desktop-dark.jpg');
+
+            form {
+                background-color: hsl(235, 24%, 19%);
+                box-shadow: 0 0 11px rgb(0 0 0 / 12%);
+
+                input {
+                    color: hsl(234, 39%, 85%);
+
+                    &:focus {
+                        border: 1px solid hsl(233, 14%, 35%);
+                    }
+                }
+
+                button {
+                    border: 1px solid hsl(233, 14%, 35%);
+                }
+            }
+        }
+
+        section {
+            background-color: hsl(235, 21%, 11%);
+
+            div {
+                background-color: hsl(235, 24%, 19%);
+                box-shadow: 0 0 11px rgb(0 0 0 / 12%);
+
+                ul {
+                    li {
+                        border-bottom: 1px solid hsl(233, 14%, 35%);
+                        form {
+                            background-color: hsl(235, 24%, 19%);
+                            box-shadow: 0 0 11px rgb(0 0 0 / 12%);
+
+                            input {
+                                color: hsl(234, 39%, 85%);
+
+                                &:focus {
+                                    border: 1px solid hsl(233, 14%, 35%);
+                                }
+                            }
+
+                            .check {
+                                border: 1px solid hsl(233, 14%, 35%);
+
+                                &:hover {
+                                    border-color: hsl(236, 33%, 92%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Aplicación de las propiedades al aplicativo
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans';
+    @include theme-colors(true);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    gap: 5vh;
+
+    div {
+        width: $width-min;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 15px;
+        }
+    }
+
+    form {
+        width: $width-min;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-radius: 3px;
+
+        input {
+            width: 90%;
+            height: 20px;
+            border: none;
+            background-color: transparent;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+
+            &:hover {
+                background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            }
+        }
+    }
+}
+
+section {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+        width: $width;
+        border-radius: 3px;
+        margin-top: -30px;
+
+        ul {
+            list-style: none;
+
+            li {
+                width: 100%;
+                display: flex;
+
+                form {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px;
+                    border-radius: 3px;
+                    box-shadow: none;
+                    input {
+                        width: 70%;
+                        height: 20px;
+                        border: none;
+                        background-color: transparent;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                    }
+                    .check{
+                        img{
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    p{
+        color: hsl(236, 9%, 61%);
+        margin-top: 2rem;
+        font-size: 15px;
+    }
+}
+
+.filterTab {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    font-size: 14px;
+    color: hsl(236, 9%, 61%);
+    border-bottom: none !important;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 37%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+        color: hsl(236, 9%, 61%);
+
+        &:hover {
+            color: hsl(235, 19%, 35%);
+        }
+    }
+
+}
+
+.filters{
+    margin-top: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+    font-size: 14px;
+    color: hsl(236, 9%, 61%);
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+        color: hsl(236, 9%, 61%);
+
+        &:hover {
+            color: hsl(235, 19%, 35%);
+        }
+    }
+}
+
+.active{
+    input{
+        text-decoration: line-through;
+        color: hsl(236, 9%, 61%);
+    }
+    .check{
+        background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        img{
+            visibility: visible;
+        }        
+    }
+}
+
+.btnActive{
+    color: blue !important;
+}
+
+.dark-mode{
+    * {
+        @include theme-colors(false);
+    }
+}
+
+
+//Aplicación del Responsive Design
+@media screen and (max-width: 570px){
+    header{
+        div{
+            width: 85%;
+        }
+        form{
+            width: 85%;
+        }
+    }
+    section{
+        div{
+            width: 90%;
+        }
+    }
+
+    .filterTab{
+        justify-content: space-between;
+        span{
+            margin-left: 15px;
+        }
+        button{
+            margin-right: 15px;
+        }
+        div{
+            display: none;
+        }
+        
+    }
+    .filters{
+        display: flex;
+    }
+    
+    
+}

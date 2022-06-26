@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Josefin Sans";
+}
+* header {
+  background-image: url("../images/bg-desktop-light.jpg");
+}
+* header form {
+  background-color: white;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.12);
+}
+* header form input:focus {
+  border: 1px solid hsl(233deg, 11%, 84%);
+}
+* header form button {
+  border: 1px solid hsl(236deg, 33%, 92%);
+}
+* section {
+  background-color: hsl(0deg, 0%, 98%);
+}
+* section div {
+  background-color: white;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.12);
+}
+* section div ul {
+  color: inherit;
+}
+* section div ul li {
+  border-bottom: 1px solid hsl(233deg, 11%, 84%);
+}
+* section div ul li form {
+  background-color: transparent;
+}
+* section div ul li form input:focus {
+  border: 1px solid hsl(233deg, 11%, 84%);
+}
+* section div ul li form button {
+  border: 1px solid hsl(236deg, 33%, 92%);
+}
+* section div ul li form button:hover {
+  border-color: hsl(233deg, 11%, 84%);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  gap: 5vh;
+}
+header div {
+  width: 435px;
+  display: flex;
+  justify-content: space-between;
+}
+header div h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 15px;
+}
+header form {
+  width: 435px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 3px;
+}
+header form input {
+  width: 90%;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+}
+header form input:focus {
+  outline: none;
+}
+header form button {
+  cursor: pointer;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+header form button:hover {
+  background: linear-gradient(to right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+
+section {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section div {
+  width: 465px;
+  border-radius: 3px;
+  margin-top: -30px;
+}
+section div ul {
+  list-style: none;
+}
+section div ul li {
+  width: 100%;
+  display: flex;
+}
+section div ul li form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: none;
+}
+section div ul li form input {
+  width: 70%;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+}
+section div ul li form input:focus {
+  outline: none;
+}
+section div ul li form button {
+  cursor: pointer;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+section div ul li form .check img {
+  visibility: hidden;
+}
+section p {
+  color: hsl(236deg, 9%, 61%);
+  margin-top: 2rem;
+  font-size: 15px;
+}
+
+.filterTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  font-size: 14px;
+  color: hsl(236deg, 9%, 61%);
+  border-bottom: none !important;
+}
+.filterTab div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 37%;
+  margin: 0;
+  box-shadow: none;
+}
+.filterTab button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: hsl(236deg, 9%, 61%);
+}
+.filterTab button:hover {
+  color: hsl(235deg, 19%, 35%);
+}
+
+.filters {
+  margin-top: 15px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+  font-size: 14px;
+  color: hsl(236deg, 9%, 61%);
+}
+.filters button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: hsl(236deg, 9%, 61%);
+}
+.filters button:hover {
+  color: hsl(235deg, 19%, 35%);
+}
+
+.active input {
+  text-decoration: line-through;
+  color: hsl(236deg, 9%, 61%);
+}
+.active .check {
+  background: linear-gradient(to right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+.active .check img {
+  visibility: visible;
+}
+
+.btnActive {
+  color: blue !important;
+}
+
+.dark-mode * header {
+  background-image: url("../images/bg-desktop-dark.jpg");
+}
+.dark-mode * header form {
+  background-color: hsl(235deg, 24%, 19%);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.12);
+}
+.dark-mode * header form input {
+  color: hsl(234deg, 39%, 85%);
+}
+.dark-mode * header form input:focus {
+  border: 1px solid hsl(233deg, 14%, 35%);
+}
+.dark-mode * header form button {
+  border: 1px solid hsl(233deg, 14%, 35%);
+}
+.dark-mode * section {
+  background-color: hsl(235deg, 21%, 11%);
+}
+.dark-mode * section div {
+  background-color: hsl(235deg, 24%, 19%);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.12);
+}
+.dark-mode * section div ul li {
+  border-bottom: 1px solid hsl(233deg, 14%, 35%);
+}
+.dark-mode * section div ul li form {
+  background-color: hsl(235deg, 24%, 19%);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.12);
+}
+.dark-mode * section div ul li form input {
+  color: hsl(234deg, 39%, 85%);
+}
+.dark-mode * section div ul li form input:focus {
+  border: 1px solid hsl(233deg, 14%, 35%);
+}
+.dark-mode * section div ul li form .check {
+  border: 1px solid hsl(233deg, 14%, 35%);
+}
+.dark-mode * section div ul li form .check:hover {
+  border-color: hsl(236deg, 33%, 92%);
+}
+
+@media screen and (max-width: 570px) {
+  header div {
+    width: 85%;
+  }
+  header form {
+    width: 85%;
+  }
+  section div {
+    width: 90%;
+  }
+  .filterTab {
+    justify-content: space-between;
+  }
+  .filterTab span {
+    margin-left: 15px;
+  }
+  .filterTab button {
+    margin-right: 15px;
+  }
+  .filterTab div {
+    display: none;
+  }
+  .filters {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
