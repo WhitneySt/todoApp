@@ -1,6 +1,6 @@
 {
   "homepage":"https://WhitneySt.github.io/todoApp",
-  "name": "jewellery-web-template",
+  "name": "todo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
